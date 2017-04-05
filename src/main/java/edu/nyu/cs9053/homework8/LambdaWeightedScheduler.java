@@ -6,7 +6,7 @@ import java.util.*;
 public class LambdaWeightedScheduler {
     // This method uses dynamic programming to sort the lisit of jobs but the time complexity is O(nlogn)
     private final List<Jobs> joblist;
-    
+
 
     public LambdaWeightedScheduler (List<Jobs> jobs) {
         joblist = jobs;
@@ -54,7 +54,7 @@ public class LambdaWeightedScheduler {
             sortJobsWithEndTime();
         }
         List<Integer> weights = new ArrayList<>();
-        List<Jobs> jobsSelected=new LinkedList<>();
+        
         weights.add(joblist.get(0).getWeight());
         for (int i=1; i<joblist.size(); i++)
         {
@@ -82,11 +82,6 @@ public class LambdaWeightedScheduler {
 
         });
     }
-
-
-
-
-
 
 
 }
