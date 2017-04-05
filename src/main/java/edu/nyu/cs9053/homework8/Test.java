@@ -19,7 +19,7 @@ public class Test {
         LambdaScheduler lambdaScheduler=new LambdaScheduler(joblist);
         List<Jobs> finalAcceptedJobs=lambdaScheduler.jobScheduling();
         for(Jobs value:finalAcceptedJobs){
-            System.out.printf("Start Time %d End Time %d  %n", value.getStartTime() ,value.getEndTime());
+            System.out.printf("Unique Id %d Start Time %d End Time %d  %n",value.getUniqueID(),value.getStartTime() ,value.getEndTime());
         }
         System.out.printf("The number of accepted non overlapping jobs of equal priority jobs are %d%n", finalAcceptedJobs.size());
         //Testing the WeightedJobScheduler
