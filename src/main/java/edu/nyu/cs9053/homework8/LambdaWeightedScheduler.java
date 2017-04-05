@@ -49,7 +49,7 @@ public class LambdaWeightedScheduler {
 
         });
     }
-    public void maximumProfitCalculator() {
+    public int maximumProfitCalculator() {
         if(!joblist.isEmpty()){
             sortJobsWithEndTime();
         }
@@ -66,7 +66,7 @@ public class LambdaWeightedScheduler {
             weights.add(Math.max(currentProfit,weights.get(i-1)));
         }
 
-        JobId(weights.get(joblist.size()-1));
+        return (weights.get(joblist.size()-1));
     }
 
     public  void sortJobsWithEndTime(){
@@ -84,39 +84,9 @@ public class LambdaWeightedScheduler {
     }
 
 
-   public void JobId(int sum) {
 
-        List<Integer> JobId=new ArrayList<>();
-        int curr_sum, start = 0;
-       for (int i = 0; i <joblist.size(); i++)
-       {
-           curr_sum=joblist.get(i).getWeight();
-           JobId.add(joblist.get(i).getUniqueID());
-           for ( int j= i+1; j <joblist.size(); j++) {
-               if (curr_sum == sum) {
-                   returnMaximumProfitList(JobId);
-               }
 
-               curr_sum = curr_sum + joblist.get(j).getWeight();
-               JobId.add(joblist.get(j).getUniqueID());
-           }
-           JobId.clear();
-       }
-    }
 
-    public void returnMaximumProfitList(List<Integer> jobId){
-        if(!jobId.isEmpty()) {
-            for (Integer job : jobId) {
-                int index = joblist.indexOf(job);
-                acceptedList.add(joblist.get(index));
-            }
-        }
-    }
-
-    public List<Jobs> getAcceptedList(){
-        maximumProfitCalculator();
-        return acceptedList;
-    }
 
 
 }

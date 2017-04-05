@@ -30,10 +30,8 @@ public class Test {
         joblist.add(new Jobs(5,8,11,8340));
         joblist.add(new Jobs(7,9,2,4083));
         LambdaWeightedScheduler  lambdaWeightedScheduler=new LambdaWeightedScheduler(joblist);
-        List<Jobs> finalAcceptedWeightedJobs= lambdaWeightedScheduler.getAcceptedList();
-        for(Jobs value:finalAcceptedWeightedJobs){
-            System.out.printf("Start Time %d End Time %d Weight %d %n", value.getStartTime() ,value.getEndTime(),value.getWeight());
-        }
+        int profit= lambdaWeightedScheduler.maximumProfitCalculator();
+        System.out.println("Profit is " + profit);
 
     }
 }
