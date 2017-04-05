@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/src/main/java/edu/nyu/cs9053/cs9053.iml" filepath="$PROJECT_DIR$/src/main/java/edu/nyu/cs9053/cs9053.iml" />
+    </modules>
+  </component>
+</project>
